@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Number Most      ưAppear</title>
+</head>
+<body>
+    <script>
+        function numMostAppear(arr){
+            var count=0;
+            var num;
+            var arlen= arr.length;
+            var ap = 1; //ap: appear (xuất hiện)
+            for(var i=0;i<arlen;i++){
+                for(var j=i;j<arlen;j++){
+                    if(arr[j]==arr[i]){
+                        count++;
+                    }
+                    if(count>ap) {
+                        ap=count;
+                        num=arr[i];
+                    }   
+                }
+                count=0;
+            }
+            return num;
+        }
+        console.log(numMostAppear([1,3,5,6,6,6,6,6,3,3,4]));
+    </script>
+</body>
+</html>
